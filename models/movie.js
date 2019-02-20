@@ -11,15 +11,11 @@ var movie = {
         orm.insertOne("movies", "movie_name", "rating", userInput1, userInput2, callback);
     },
     // update a movie to go into the watched column
-    watched: function(callback) {
+    watched: function(id, callback) {
         orm.updateOne("movies", "watched", true, id, callback);
     },
-    // update a movie's information
-    edit: function(callback) {
-        orm.updateOne("movies", column, val1, id, callback);
-    },
     // delete a movie from the list
-    delete: function(callback) {
+    delete: function(id, callback) {
         orm.deleteOne("movies", id, callback);
     }
 };
