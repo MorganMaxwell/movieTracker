@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    var currentURL = window.location.origin;
+    // var  = window.location.origin;
     // put movie in watched column
     $(".change-watched").click(function () {
         var id = $(this).data("id");
 
-        $.ajax(currentURL + "/api/movies/" + id, {
+        $.ajax("/api/movies/" + id, {
             type: "PUT",
         }).then(function () {
             location.reload();
@@ -20,7 +20,7 @@ $(document).ready(function () {
             rating: rating
         };
 
-        $.ajax(currentURL + "/api/newmovie", {
+        $.ajax("/api/newmovie", {
             type: "POST",
             data: newMovie
         }).then(function () {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     $(".deleteMovie").click(function () {
         var id = $(this).data("id");
 
-        $.ajax(currentURL + "/api/movies/" + id, {
+        $.ajax("/api/movies/" + id, {
             type: "DELETE"
         }).then(function () {
             location.reload();
