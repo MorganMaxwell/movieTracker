@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(".change-watched").click(function () {
         var id = $(this).data("id");
 
-        $.ajax("/api/movies/" + id, {
+        $.ajax(__dirname + "/api/movies/" + id, {
             type: "PUT",
         }).then(function () {
             location.reload();
@@ -19,7 +19,7 @@ $(document).ready(function () {
             rating: rating
         };
 
-        $.ajax("/api/newmovie", {
+        $.ajax(__dirname + "/api/newmovie", {
             type: "POST",
             data: newMovie
         }).then(function () {
@@ -30,7 +30,7 @@ $(document).ready(function () {
     $(".deleteMovie").click(function () {
         var id = $(this).data("id");
 
-        $.ajax("/api/movies/" + id, {
+        $.ajax(__dirname + "/api/movies/" + id, {
             type: "DELETE"
         }).then(function () {
             location.reload();
