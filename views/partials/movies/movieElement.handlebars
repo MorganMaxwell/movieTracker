@@ -1,0 +1,9 @@
+<li>
+	{{movie_name}}
+
+	<button class="change-watched" data-id="{{id}}" data-newsleep="{{sleep}}">
+		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button>
+
+	<button class="watched-movie" data-id="{{this.id}}">Watched?</button>
+</li>

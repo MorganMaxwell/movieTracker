@@ -1,0 +1,22 @@
+<H1>Movies</H1>
+
+<h2>list1</h2>
+
+<ul>
+    {{#each movies}}
+        {{#unless watched}}
+            {{> movies/movieElement watched=true}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<ul>
+    {{#each movies}}
+        {{#if watched}}
+            {{> movies/movieElement watched=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+
+<h2>list2</h2>
