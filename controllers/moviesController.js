@@ -1,10 +1,12 @@
 var express = require("express");
 
 var router = express.Router();
+var currentURL = window.location.origin;
+
 
 var movie = require("../models/movie.js");
 // display database information to the screen
-router.get("/", function (req, res) {
+router.get(currentURL + "/", function (req, res) {
     movie.all(function (data) {
         var handleBarsObject = {
             movies: data
@@ -13,7 +15,7 @@ router.get("/", function (req, res) {
     });
 });
 // put a new movie + rating into the database, and update the screen
-router.post("/api/newmovie", function (req, res) {
+router.post(currentURL + "/api/newmovie", function (req, res) {
     movie.new(
         req.body.name,
         req.body.rating,
@@ -22,7 +24,7 @@ router.post("/api/newmovie", function (req, res) {
         });
 });
 // update a movie to the watched column
-router.put("/api/movies/:id", function (req, res) {
+router.put(currentURL + "/api/movies/:id", function (req, res) {
     var editPoint = req.params.id;
 
     movie.watched(editPoint, function (result) {
@@ -31,10 +33,10 @@ router.put("/api/movies/:id", function (req, res) {
     });
 });
 // delete a movie from database
-router.delete("/api/movies/:id", function (req, res) {
+router.delete(currentURL + "/api/movies/:id", function (req, res) {
     var deletePoint = req.params.id;
 
-    movie.delete(deletePoint, function(result) {
+    movie.delete(deletePoint, function (result) {
         console.log(result);
         res.end();
     });

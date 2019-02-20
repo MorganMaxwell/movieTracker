@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // var  = window.location.origin;
     // put movie in watched column
     $(".change-watched").click(function () {
         var id = $(this).data("id");
