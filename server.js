@@ -16,6 +16,9 @@ var exphbs = require("express-handlebars");
 // setting handlebars to use 'main' as basic HTML
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// ---------------------------------------------- \\
+
 // requiring routes to other HTML files
 var routes = require("./controllers/moviesController.js");
 // let server use routes

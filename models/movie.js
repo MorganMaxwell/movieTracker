@@ -19,5 +19,5 @@ var movie = {
         orm.deleteOne("movies", id, callback);
     }
 };
-
+// export to use methods up the chain e.g. moviesController.js
 module.exports = movie;

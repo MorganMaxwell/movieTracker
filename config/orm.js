@@ -1,11 +1,7 @@
 const connection = require("./connection.js");
-// basic functions for controller to use to 
-// send to the databse
-// SELECT * FROM
-// INSERT INTO
-// UPDATE
 
 var orm = {
+    // generic method to get all columns from database
     selectall: function (tableInput, callback) {
         connection.query(
             "SELECT * FROM " + tableInput + ";",
@@ -15,6 +11,7 @@ var orm = {
             }
         );
     },
+    // equivalent to a post, just creating a new row of data
     insertOne: function (tableInput, col1, col2, userInput1, userInput2, callback) {
         connection.query(
             "INSERT INTO ?? (??,??) VALUES (?,?)",
@@ -25,6 +22,7 @@ var orm = {
             }
         );
     },
+    // equivalent to a put, editing an existing row of data
     updateOne: function (tableInput, columns, value, id, callback) {
         connection.query(
             "UPDATE ?? SET ?? = ? WHERE id = ?;",
@@ -35,6 +33,7 @@ var orm = {
             }
         );
     },
+    // ... delete.... that's it.
     deleteOne: function(tableInput, id, callback) {
         connection.query(
             "DELETE FROM ?? WHERE id = ?;",
@@ -46,5 +45,5 @@ var orm = {
         );
     }
 };
-
+// exporting to use up the chain e.g. movie.js
 module.exports = orm;

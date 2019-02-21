@@ -3,7 +3,7 @@ const mysql = require("mysql");
 // hide my password
 require('dotenv').config();
 var connection;
-
+// if there's hosting data, then use it. otherwise, connect to a local database
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
@@ -27,5 +27,5 @@ connection.connect(function (err) {
     console.log("connected as ID: " + connection.threadId);
 });
 
-// Export connection for ORM? 
+// Export connection for ORM
 module.exports = connection;

@@ -1,7 +1,7 @@
+// require express for the routing
 var express = require("express");
-
+// router does... routing!
 var router = express.Router();
-
 
 var movie = require("../models/movie.js");
 // display database information to the screen

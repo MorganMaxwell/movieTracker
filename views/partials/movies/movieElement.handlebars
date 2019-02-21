@@ -1,3 +1,4 @@
+{{!-- if it has been watched, don't print the delete button --}}
 {{#if watched}}
 <li>
 	<span class="text">
@@ -6,6 +7,7 @@
 	</span>
 	<button class="deleteMovie btn btn-secondary" data-id="{{this.id}}">Delete</button>
 </li>
+ {{!-- else, do print a delete button --}}
 {{else}}
 <li>
 	<span class="text">
