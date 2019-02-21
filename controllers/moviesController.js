@@ -27,7 +27,6 @@ router.put("/api/movies/:id", function (req, res) {
     var editPoint = req.params.id;
 
     movie.watched(editPoint, function (result) {
-        console.log(result);
         res.end();
     });
 });
@@ -36,7 +35,6 @@ router.delete("/api/movies/:id", function (req, res) {
     var deletePoint = req.params.id;
 
     movie.delete(deletePoint, function (result) {
-        console.log(result);
         res.end();
     });
 });
